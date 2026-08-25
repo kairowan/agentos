@@ -53,8 +53,8 @@ validation release, not a daily-driver operating system.
 
 See the [platform repository](https://github.com/kairowan/agentos-platform) for
 source, CI artifacts, and implementation issues.
-Download the first runnable APK from the
-[`v0.1.0` pre-release](https://github.com/kairowan/agentos-platform/releases/tag/v0.1.0).
+Download the current runnable APK from the
+[`v0.2.0` pre-release](https://github.com/kairowan/agentos-platform/releases/tag/v0.2.0).
 
 ## Development without a full AOSP workstation
 
