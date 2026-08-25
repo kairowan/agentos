@@ -11,6 +11,8 @@ AgentOS 是一个基于 AOSP 17 的智能体原生操作系统实验项目。用
 系统通过受控能力执行任务，并为当前任务即时生成交互界面，而不是要求用户
 在一组传统应用之间切换。
 
+![AgentOS v0.2.1 running on an Android emulator](https://github.com/kairowan/agentos-platform/releases/download/v0.2.1/AgentShell-home.png)
+
 This repository is the project entry point. It pins the AOSP branch, documents
 the architecture, and synchronizes the buildable platform code from
 [`agentos-platform`](https://github.com/kairowan/agentos-platform).
@@ -54,7 +56,7 @@ validation release, not a daily-driver operating system.
 See the [platform repository](https://github.com/kairowan/agentos-platform) for
 source, CI artifacts, and implementation issues.
 Download the current runnable APK from the
-[`v0.2.0` pre-release](https://github.com/kairowan/agentos-platform/releases/tag/v0.2.0).
+[`v0.2.1` pre-release](https://github.com/kairowan/agentos-platform/releases/tag/v0.2.1).
 
 ## Development without a full AOSP workstation
 
