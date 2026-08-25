@@ -11,6 +11,9 @@
 - [x] Deterministic offline shell path
 - [x] Validated declarative UI schema and renderer
 - [x] Voice-first input and spoken response provider boundaries
+- [x] System VoiceInteractionService and isolated hotword-service boundary
+- [x] Silence-ended, one-turn on-device command recognition
+- [ ] Enroll and calibrate the `Hey AgentOS` DSP model on target hardware
 - [ ] Recovery integration and complete accessibility verification
 
 ## M2 — Capability platform
@@ -39,4 +42,5 @@
 
 ## M5 — Device product
 
+- SoundTrigger HAL, DSP hotword power/accuracy calibration, and audio policy
 - Physical-device bring-up, verified boot, OTA, rollback, CTS, and VTS

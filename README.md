@@ -47,11 +47,13 @@ to validate linkage and the preflight behavior.
 
 ## Status
 
-The v0.4 platform baseline adds voice-first input and spoken results, plus locally
-filtered social-message notification events delivered from the dedicated capability
-service over one-way AIDL. Signature permission, Binder caller checks, one-time
-confirmation, and draft SELinux domains continue to protect system capabilities. It
-remains an architecture validation release, not a daily-driver operating system.
+The v0.4 release remains the downloadable baseline. Current platform development
+moves microphone access from the HOME app into an AOSP `VoiceInteractionService`,
+with DSP hotword detection, an isolated detection service, silence-ended command
+capture, and signature-protected delivery. Locally filtered social-message events
+continue through the dedicated capability service over one-way AIDL. It remains an
+architecture validation project, not a daily-driver operating system; real hotword
+wake-up still needs target-device SoundTrigger hardware and model enrollment.
 
 See the [platform repository](https://github.com/kairowan/agentos-platform) for
 source, CI artifacts, and implementation issues.

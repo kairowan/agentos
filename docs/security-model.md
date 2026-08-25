@@ -22,6 +22,13 @@ The notification listener is owned by the Broker package and still requires expl
 Android user approval. Only bounded message-category events cross into the Shell;
 they are not automatically persisted, spoken, sent to a model, or replied to.
 
+Microphone access belongs to the selected system `VoiceInteractionService`, not the
+HOME shell. Always-on detection uses SoundTrigger/DSP and an isolated
+`HotwordDetectionService`; unsupported hardware fails closed instead of opening a
+continuous software microphone. Recognized text crosses into the Shell through a
+signature-protected receiver and a random, one-time in-memory ticket. The ticket
+also prevents direct Intent injection into the exported HOME activity.
+
 ## Required invariant
 
 No model-controlled value becomes a Binder call, Intent, filesystem path, network
