@@ -14,8 +14,10 @@ Public repositories:
 ## Existing evidence
 
 - Public Kotlin and Jetpack Compose implementation
-- Repeatable Gradle unit tests and APK builds on GitHub Actions
-- Downloadable, checksum-published pre-release APKs
+- Typed AIDL boundary between separate Shell and Capability Service APKs
+- Signature permission, Binder caller identity checks, and draft SELinux domains
+- Repeatable Gradle unit tests and dual-APK builds on GitHub Actions
+- Real-emulator Binder integration check and checksum-published pre-release APKs
 - AOSP `repo` manifest and Cuttlefish product definition
 - Apache-2.0 license, security policy, contribution guide, roadmap, and public issues
 - Fail-closed capability, endpoint, generated-UI, and offline-fallback tests
