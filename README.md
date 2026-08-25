@@ -1,5 +1,8 @@
 # AgentOS
 
+[![Manifest](https://github.com/kairowan/agentos/actions/workflows/manifest.yml/badge.svg)](https://github.com/kairowan/agentos/actions/workflows/manifest.yml)
+[![Platform CI](https://github.com/kairowan/agentos-platform/actions/workflows/ci.yml/badge.svg)](https://github.com/kairowan/agentos-platform/actions/workflows/ci.yml)
+
 AgentOS is an experimental agent-native operating system based on AOSP 17.
 Users express goals instead of opening traditional applications; trusted system
 services execute approved capabilities and render task-specific interfaces.
@@ -49,6 +52,8 @@ validation release, not a daily-driver operating system.
 
 See the [platform repository](https://github.com/kairowan/agentos-platform) for
 source, CI artifacts, and implementation issues.
+Download the first runnable APK from the
+[`v0.1.0` pre-release](https://github.com/kairowan/agentos-platform/releases/tag/v0.1.0).
 
 ## Development without a full AOSP workstation
 
@@ -66,4 +71,3 @@ SELinux, privileged-service integration, Cuttlefish, CTS, and VTS.
 ## License
 
 Apache License 2.0.
-
