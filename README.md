@@ -45,9 +45,10 @@ Run `./scripts/check.sh` before syncing AOSP to validate the project linkage.
 
 ## Status
 
-The v0.1 platform baseline now includes a Kotlin/Jetpack Compose HOME shell,
-declarative generated-interface model, three read-only capabilities, deterministic
-local agent routing, JVM tests, and automatic APK builds. It is an architecture
+The v0.2 platform baseline includes a Kotlin/Jetpack Compose HOME shell, strict
+generated-interface validation, a guarded Capability Broker, trusted one-time
+confirmation, four system capabilities, optional OpenAI-compatible planning,
+offline fallback, JVM tests, and automatic APK builds. It is an architecture
 validation release, not a daily-driver operating system.
 
 See the [platform repository](https://github.com/kairowan/agentos-platform) for
@@ -66,6 +67,7 @@ SELinux, privileged-service integration, Cuttlefish, CTS, and VTS.
 - [Architecture](docs/architecture.md)
 - [Security model](docs/security-model.md)
 - [Roadmap](docs/roadmap.md)
+- [Cloud build sponsorship brief](docs/cloud-build-sponsorship.md)
 - [Contributing](CONTRIBUTING.md)
 
 ## License

@@ -8,21 +8,23 @@
 
 ## M1 — Trusted shell
 
-- Deterministic offline shell and recovery path
-- Validated declarative UI schema and renderer
-- Accessibility and lifecycle support
+- [x] Deterministic offline shell path
+- [x] Validated declarative UI schema and renderer
+- [ ] Recovery integration and complete accessibility verification
 
 ## M2 — Capability platform
 
-- Typed AIDL capability registry and broker
-- Scoped permissions, confirmation UI, quotas, revocation, and audit log
-- Initial read-only device capabilities
+- [x] Typed capability registry and in-process policy broker
+- [x] Trusted confirmation UI and bounded audit log
+- [x] Initial read-only device capabilities
+- [ ] AIDL process boundary, SELinux domain, scoped grants, quotas, and revocation
 
 ## M3 — Agent runtime
 
-- Pluggable local and remote model providers
-- Planning, cancellation, resumable workflows, and user-visible execution trace
-- Prompt-injection boundaries for external content
+- [x] Deterministic local planner and optional OpenAI-compatible provider
+- [x] Cancellation and fail-safe offline fallback
+- [ ] Resumable workflows and user-visible execution trace
+- [ ] Adversarial prompt-injection test corpus
 
 ## M4 — Generated experiences
 
@@ -33,4 +35,3 @@
 ## M5 — Device product
 
 - Physical-device bring-up, verified boot, OTA, rollback, CTS, and VTS
-
