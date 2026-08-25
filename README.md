@@ -37,21 +37,21 @@ platform repository at `workspace/vendor/agentos`.
 ## Build
 
 ```bash
-cd workspace
-source build/envsetup.sh
-lunch agentos_cf_x86_64-aosp_current-userdebug
-m
+./scripts/build.sh
 ```
 
-Run `./scripts/check.sh` before syncing AOSP to validate the project linkage.
+The build script rejects hosts below the documented 64 GiB RAM and 400 GiB free
+disk minimum, records a pinned source manifest and build metadata, and publishes
+SHA-256 checksums for generated images. Run `./scripts/check.sh` before syncing AOSP
+to validate linkage and the preflight behavior.
 
 ## Status
 
-The v0.2 platform baseline includes a Kotlin/Jetpack Compose HOME shell, strict
-generated-interface validation, a guarded Capability Broker, trusted one-time
-confirmation, four system capabilities, optional OpenAI-compatible planning,
-offline fallback, JVM tests, and automatic APK builds. It is an architecture
-validation release, not a daily-driver operating system.
+The v0.3 platform baseline separates the Kotlin/Jetpack Compose HOME shell from a
+dedicated capability-service APK. A typed AIDL contract, signature permission,
+Binder caller checks, one-time confirmation, and draft SELinux domains protect four
+initial capabilities. It remains an architecture validation release, not a
+daily-driver operating system.
 
 See the [platform repository](https://github.com/kairowan/agentos-platform) for
 source, CI artifacts, and implementation issues.

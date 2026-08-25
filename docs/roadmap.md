@@ -17,7 +17,9 @@
 - [x] Typed capability registry and in-process policy broker
 - [x] Trusted confirmation UI and bounded audit log
 - [x] Initial read-only device capabilities
-- [ ] AIDL process boundary, SELinux domain, scoped grants, quotas, and revocation
+- [x] AIDL process boundary, signature permission, and caller identity checks
+- [ ] Compile and validate SELinux domains in a complete AOSP image
+- [ ] Scoped grants, quotas, and revocation
 
 ## M3 — Agent runtime
 
