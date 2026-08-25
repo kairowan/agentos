@@ -18,6 +18,10 @@ level and also rejects Binder UIDs that do not resolve exclusively to the signed
 shell package. Draft product SELinux policy places both packages in distinct domains
 and grants only their Binder communication path.
 
+The notification listener is owned by the Broker package and still requires explicit
+Android user approval. Only bounded message-category events cross into the Shell;
+they are not automatically persisted, spoken, sent to a model, or replied to.
+
 ## Required invariant
 
 No model-controlled value becomes a Binder call, Intent, filesystem path, network

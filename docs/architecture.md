@@ -13,6 +13,12 @@ HAL, Binder, media, connectivity, keystore, update, and recovery foundations.
 5. **Model Router** selects local or remote models without granting either system access.
 6. **Memory Service** separates ephemeral context, preferences, credentials, and audit data.
 
+Voice is the primary intent path: a replaceable speech recognizer feeds the same
+Agent Runtime used by text fallback, and text-to-speech reads only responses to
+voice-originated requests. Incoming notification events travel in the opposite
+direction—from Android into the Broker, through a bounded local filter, then over a
+one-way AIDL callback to the Shell.
+
 ## Process boundary
 
 Models and generated code never run in `system_server` or the capability-service

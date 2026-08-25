@@ -11,7 +11,7 @@ AgentOS 是一个基于 AOSP 17 的智能体原生操作系统实验项目。用
 系统通过受控能力执行任务，并为当前任务即时生成交互界面，而不是要求用户
 在一组传统应用之间切换。
 
-![AgentOS v0.3.0 using the separate capability service on an Android emulator](https://github.com/kairowan/agentos-platform/releases/download/v0.3.0/AgentShell-home.png)
+![AgentOS v0.4.0 using voice-first UI and the separate capability service](https://github.com/kairowan/agentos-platform/releases/download/v0.4.0/AgentShell-home.png)
 
 This repository is the project entry point. It pins the AOSP branch, documents
 the architecture, and synchronizes the buildable platform code from
@@ -47,16 +47,16 @@ to validate linkage and the preflight behavior.
 
 ## Status
 
-The v0.3 platform baseline separates the Kotlin/Jetpack Compose HOME shell from a
-dedicated capability-service APK. A typed AIDL contract, signature permission,
-Binder caller checks, one-time confirmation, and draft SELinux domains protect four
-initial capabilities. It remains an architecture validation release, not a
-daily-driver operating system.
+The v0.4 platform baseline adds voice-first input and spoken results, plus locally
+filtered social-message notification events delivered from the dedicated capability
+service over one-way AIDL. Signature permission, Binder caller checks, one-time
+confirmation, and draft SELinux domains continue to protect system capabilities. It
+remains an architecture validation release, not a daily-driver operating system.
 
 See the [platform repository](https://github.com/kairowan/agentos-platform) for
 source, CI artifacts, and implementation issues.
 Download the current runnable APK from the
-[`v0.3.0` pre-release](https://github.com/kairowan/agentos-platform/releases/tag/v0.3.0).
+[`v0.4.0` pre-release](https://github.com/kairowan/agentos-platform/releases/tag/v0.4.0).
 
 ## Development without a full AOSP workstation
 
