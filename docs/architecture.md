@@ -19,9 +19,14 @@ Voice is the primary intent path: Android's `VoiceInteractionService` and
 `AlwaysOnHotwordDetector` receive a low-power SoundTrigger/DSP match, an isolated
 `HotwordDetectionService` verifies it, and one on-device recognizer turn feeds the
 same Agent Runtime used by text fallback. Silence closes the recognizer; TTS reads
-only voice-originated responses and then re-arms detection. Incoming notification
+only voice-originated responses. Detection is re-armed during planning and playback
+so a new keyphrase can stop the current turn and open another. Incoming notification
 events travel in the opposite direction—from Android into the Broker, through a
 bounded local filter, then over a one-way AIDL callback to the Shell.
+
+Completed goals and actual result titles form a bounded, local, source-backed
+conversation graph. It is kept separate from semantic long-term memory: inferred
+facts become durable only after a future user-confirmation boundary is implemented.
 
 ## Process boundary
 

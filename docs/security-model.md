@@ -29,6 +29,10 @@ continuous software microphone. Recognized text crosses into the Shell through a
 signature-protected receiver and a random, one-time in-memory ticket. The ticket
 also prevents direct Intent injection into the exported HOME activity.
 
+Conversation history is bounded, stored only in credential-protected application
+storage, excluded from model prompts, and removable in the UI. Notification content
+and model-inferred facts are not inserted into durable knowledge automatically.
+
 ## Required invariant
 
 No model-controlled value becomes a Binder call, Intent, filesystem path, network

@@ -50,7 +50,9 @@ to validate linkage and the preflight behavior.
 The v0.4 release remains the downloadable baseline. Current platform development
 moves microphone access from the HOME app into an AOSP `VoiceInteractionService`,
 with DSP hotword detection, an isolated detection service, silence-ended command
-capture, and signature-protected delivery. Locally filtered social-message events
+capture, hotword interruption, and signature-protected delivery. A bounded local
+history view maps completed goals to their actual results without silently storing
+model-inferred facts. Locally filtered social-message events
 continue through the dedicated capability service over one-way AIDL. It remains an
 architecture validation project, not a daily-driver operating system; real hotword
 wake-up still needs target-device SoundTrigger hardware and model enrollment.

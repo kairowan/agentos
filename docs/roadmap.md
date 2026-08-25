@@ -13,6 +13,9 @@
 - [x] Voice-first input and spoken response provider boundaries
 - [x] System VoiceInteractionService and isolated hotword-service boundary
 - [x] Silence-ended, one-turn on-device command recognition
+- [x] Hotword barge-in for active planning and spoken responses
+- [x] Bounded local conversation history and source-backed map
+- [ ] User-confirmed semantic memory with provenance, correction, and deletion
 - [ ] Enroll and calibrate the `Hey AgentOS` DSP model on target hardware
 - [ ] Recovery integration and complete accessibility verification
 
