@@ -1,0 +1,30 @@
+name: Architecture proposal
+description: Propose a bounded change to the AgentOS system architecture
+title: "[Architecture]: "
+labels: [architecture]
+body:
+  - type: textarea
+    id: goal
+    attributes:
+      label: User goal
+    validations:
+      required: true
+  - type: textarea
+    id: boundary
+    attributes:
+      label: Process and trust boundary
+    validations:
+      required: true
+  - type: textarea
+    id: failure
+    attributes:
+      label: Failure and recovery behavior
+    validations:
+      required: true
+  - type: textarea
+    id: check
+    attributes:
+      label: Smallest runnable acceptance check
+    validations:
+      required: true
+
