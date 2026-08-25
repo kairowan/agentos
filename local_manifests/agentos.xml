@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <remote name="agentos-github" fetch="https://github.com/kairowan/" />
+  <project
+      name="agentos-platform"
+      path="vendor/agentos"
+      remote="agentos-github"
+      revision="main" />
+</manifest>
+
