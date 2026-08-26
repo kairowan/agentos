@@ -31,6 +31,8 @@
 - [x] Initial read-only device capabilities
 - [x] AIDL process boundary, signature permission, and caller identity checks
 - [x] Broker-filtered incoming message events over one-way AIDL
+- [x] Installed-app registry, confirmed launch, and bounded accessibility-semantic bridge
+- [ ] App-specific adapters using deep links, MediaSession, share targets, or semantic fallback
 - [ ] Compile and validate SELinux domains in a complete AOSP image
 - [ ] Confirmed notification replies and lock-screen privacy policy
 - [ ] Scoped grants, quotas, and revocation

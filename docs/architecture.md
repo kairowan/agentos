@@ -39,6 +39,13 @@ only UI state; the media process owns Camera2, MediaRecorder, pending MediaStore
 artifacts, foreground capture notifications, and caller verification. This avoids
 placing camera or recording permissions in the HOME/model process.
 
+Installed Android applications remain usable as compatibility-layer providers.
+An App Bridge in the capability-service process enumerates only launchable
+activities, exposes bounded accessibility-semantic snapshots, and translates
+validated generic actions into platform accessibility operations. Stable deep
+links, share targets, content providers, and media sessions take precedence when
+an app exposes them; private app storage and credentials stay outside the bridge.
+
 ## Process boundary
 
 Models and generated code never run in `system_server` or the capability-service

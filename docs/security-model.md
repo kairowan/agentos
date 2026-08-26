@@ -43,6 +43,13 @@ platform-signed Shell package over a signature permission. Android camera/microp
 AppOps indicators and foreground notifications remain enabled. Failed captures
 delete pending MediaStore rows rather than exposing partial files.
 
+The installed-app bridge is signature-protected and does not request visibility of
+every installed package. Accessibility access requires explicit user enablement;
+snapshots and inputs are bounded. App launch, text input, and transaction-like
+clicks use short-lived one-time confirmations. Queued operations revalidate the
+target package, node path, class, and text before execution, so a changed page
+cannot silently redirect an approved action.
+
 ## Required invariant
 
 No model-controlled value becomes a Binder call, Intent, filesystem path, network

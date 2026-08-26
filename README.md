@@ -65,6 +65,12 @@ pauseable M4A recording, and unified MediaStore queries. AgentShell renders the
 camera, gallery, and recorder as Kotlin Compose workspaces around a native Surface;
 target-device HAL and vendor-extension calibration remains required for OEM-grade image quality.
 
+An installed-app capability bridge also keeps conventional Android apps available
+as compatibility providers behind the Agent interface. It discovers launchable
+apps, requires confirmation before leaving AgentOS, caches a bounded accessible
+semantic snapshot, and revalidates page nodes before controlled click, scroll, or
+text-input actions. It never reads another app's private database or account token.
+
 See the [platform repository](https://github.com/kairowan/agentos-platform) for
 source, CI artifacts, and implementation issues.
 Download the current runnable APK from the
