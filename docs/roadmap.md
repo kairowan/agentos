@@ -14,8 +14,9 @@
 - [x] System VoiceInteractionService and isolated hotword-service boundary
 - [x] Silence-ended, one-turn on-device command recognition
 - [x] Hotword barge-in for active planning and spoken responses
-- [x] Bounded local conversation history and source-backed map
-- [ ] User-confirmed semantic memory with provenance, correction, and deletion
+- [x] Complete SQLite conversation history and virtualized full-history view
+- [x] Automatic semantic graph extraction with evidence and confidence
+- [ ] Per-relation confirmation, correction, merge, and selective forgetting
 - [ ] Enroll and calibrate the `Hey AgentOS` DSP model on target hardware
 - [ ] Recovery integration and complete accessibility verification
 
@@ -46,4 +47,5 @@
 ## M5 — Device product
 
 - SoundTrigger HAL, DSP hotword power/accuracy calibration, and audio policy
+- Physical-device TTS barge-in echo/false-wake acceptance matrix
 - Physical-device bring-up, verified boot, OTA, rollback, CTS, and VTS

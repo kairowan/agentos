@@ -29,9 +29,12 @@ continuous software microphone. Recognized text crosses into the Shell through a
 signature-protected receiver and a random, one-time in-memory ticket. The ticket
 also prevents direct Intent injection into the exported HOME activity.
 
-Conversation history is bounded, stored only in credential-protected application
-storage, excluded from model prompts, and removable in the UI. Notification content
-and model-inferred facts are not inserted into durable knowledge automatically.
+Conversation history and its semantic graph are stored in credential-protected
+SQLite and removable in the UI. Old history is excluded from model prompts. When a
+remote model is enabled, only the current prompt receives an additional structured
+knowledge-extraction request. Model relations require exact source evidence, remain
+marked as candidates, and cannot authorize capabilities. Notification content is
+not inserted into durable knowledge.
 
 ## Required invariant
 

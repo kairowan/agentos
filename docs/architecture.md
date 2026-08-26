@@ -24,9 +24,12 @@ so a new keyphrase can stop the current turn and open another. Incoming notifica
 events travel in the opposite direction—from Android into the Broker, through a
 bounded local filter, then over a one-way AIDL callback to the Shell.
 
-Completed goals and actual result titles form a bounded, local, source-backed
-conversation graph. It is kept separate from semantic long-term memory: inferred
-facts become durable only after a future user-confirmation boundary is implemented.
+Completed goals and actual result titles are stored without UI truncation in a
+private SQLite history. An offline extractor records explicit facts; when a model
+endpoint is enabled, a second structured pass proposes broader people,
+relationships, preferences, projects, places, and long-term facts. Every graph edge
+retains its source turn, exact evidence, confidence, and confirmation state. Model
+candidates remain unable to authorize capabilities.
 
 ## Process boundary
 
