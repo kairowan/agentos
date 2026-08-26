@@ -29,8 +29,8 @@ continuous software microphone. Recognized text crosses into the Shell through a
 signature-protected receiver and a random, one-time in-memory ticket. The ticket
 also prevents direct Intent injection into the exported HOME activity.
 
-Conversation history and its semantic graph are stored in credential-protected
-SQLite and removable in the UI. Old history is excluded from model prompts. When a
+Conversation history and its semantic graph are stored through Room in a
+credential-protected SQLite database and removable in the UI. Old history is excluded from model prompts. When a
 remote model is enabled, only the current prompt receives an additional structured
 knowledge-extraction request. Model relations require exact source evidence, remain
 marked as candidates, and cannot authorize capabilities. Notification content is

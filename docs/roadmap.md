@@ -14,8 +14,9 @@
 - [x] System VoiceInteractionService and isolated hotword-service boundary
 - [x] Silence-ended, one-turn on-device command recognition
 - [x] Hotword barge-in for active planning and spoken responses
-- [x] Complete SQLite conversation history and virtualized full-history view
+- [x] Complete Room/SQLite conversation history and virtualized full-history view
 - [x] Automatic semantic graph extraction with evidence and confidence
+- [x] Full interactive graph canvas with pan, 0.35x-4x zoom, and entity/relation editing
 - [ ] Per-relation confirmation, correction, merge, and selective forgetting
 - [ ] Enroll and calibrate the `Hey AgentOS` DSP model on target hardware
 - [ ] Recovery integration and complete accessibility verification
