@@ -59,6 +59,12 @@ continue through the dedicated capability service over one-way AIDL. It remains 
 architecture validation project, not a daily-driver operating system; real hotword
 wake-up still needs target-device SoundTrigger hardware and model enrollment.
 
+The platform also contains a native media vertical slice: a separately sandboxed,
+signature-protected service owns Camera2 preview, JPEG capture, H.264/AAC video,
+pauseable M4A recording, and unified MediaStore queries. AgentShell renders the
+camera, gallery, and recorder as Kotlin Compose workspaces around a native Surface;
+target-device HAL and vendor-extension calibration remains required for OEM-grade image quality.
+
 See the [platform repository](https://github.com/kairowan/agentos-platform) for
 source, CI artifacts, and implementation issues.
 Download the current runnable APK from the

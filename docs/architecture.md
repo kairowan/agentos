@@ -33,6 +33,12 @@ node positions are stored in Room; search and viewport culling keep large graphs
 navigable without truncating stored entities or relationships. Model
 candidates remain unable to authorize capabilities.
 
+Camera and microphone media sessions live in a third process, `AgentMediaService`.
+AgentShell passes a native preview Surface over signature-protected AIDL and keeps
+only UI state; the media process owns Camera2, MediaRecorder, pending MediaStore
+artifacts, foreground capture notifications, and caller verification. This avoids
+placing camera or recording permissions in the HOME/model process.
+
 ## Process boundary
 
 Models and generated code never run in `system_server` or the capability-service

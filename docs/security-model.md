@@ -37,6 +37,12 @@ knowledge-extraction request. Model relations require exact source evidence, rem
 marked as candidates, and cannot authorize capabilities. Notification content is
 not inserted into durable knowledge.
 
+AgentShell does not hold camera or microphone permissions. Native capture is owned
+by the separately sandboxed AgentMediaService, which accepts only the single
+platform-signed Shell package over a signature permission. Android camera/microphone
+AppOps indicators and foreground notifications remain enabled. Failed captures
+delete pending MediaStore rows rather than exposing partial files.
+
 ## Required invariant
 
 No model-controlled value becomes a Binder call, Intent, filesystem path, network

@@ -18,6 +18,8 @@
 - [x] Automatic semantic graph extraction with evidence and confidence
 - [x] Full interactive graph canvas with pan, 0.35x-4x zoom, and entity/relation editing
 - [x] Persistent node layout, full-graph search, match navigation, and viewport culling
+- [x] Native Camera2, photo/video, recorder, and MediaStore workspace vertical slice
+- [ ] Target-device Camera HAL, stabilization, stream-combination, and OEM extension calibration
 - [ ] Per-relation confirmation, correction, merge, and selective forgetting
 - [ ] Enroll and calibrate the `Hey AgentOS` DSP model on target hardware
 - [ ] Recovery integration and complete accessibility verification
