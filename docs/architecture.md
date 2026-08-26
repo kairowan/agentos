@@ -28,7 +28,9 @@ Completed goals and actual result titles are stored without UI truncation in a
 private Room-backed SQLite history. An offline extractor records explicit facts; when a model
 endpoint is enabled, a second structured pass proposes broader people,
 relationships, preferences, projects, places, and long-term facts. Every graph edge
-retains its source turn, exact evidence, confidence, and confirmation state. Model
+retains its source turn, exact evidence, confidence, and confirmation state. Custom
+node positions are stored in Room; search and viewport culling keep large graphs
+navigable without truncating stored entities or relationships. Model
 candidates remain unable to authorize capabilities.
 
 ## Process boundary

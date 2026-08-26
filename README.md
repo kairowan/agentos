@@ -52,7 +52,8 @@ moves microphone access from the HOME app into an AOSP `VoiceInteractionService`
 with DSP hotword detection, an isolated detection service, silence-ended command
 capture, hotword interruption, and signature-protected delivery. A bounded local
 Room-backed SQLite history shows every completed goal and an automatically extracted,
-zoomable and editable semantic graph. Relations preserve evidence, confidence, and candidate status so
+searchable, zoomable and editable semantic graph with persistent custom node positions.
+Relations preserve evidence, confidence, and candidate status so
 model inference cannot become capability authority. Locally filtered social-message events
 continue through the dedicated capability service over one-way AIDL. It remains an
 architecture validation project, not a daily-driver operating system; real hotword

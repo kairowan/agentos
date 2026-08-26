@@ -17,6 +17,7 @@
 - [x] Complete Room/SQLite conversation history and virtualized full-history view
 - [x] Automatic semantic graph extraction with evidence and confidence
 - [x] Full interactive graph canvas with pan, 0.35x-4x zoom, and entity/relation editing
+- [x] Persistent node layout, full-graph search, match navigation, and viewport culling
 - [ ] Per-relation confirmation, correction, merge, and selective forgetting
 - [ ] Enroll and calibrate the `Hey AgentOS` DSP model on target hardware
 - [ ] Recovery integration and complete accessibility verification
