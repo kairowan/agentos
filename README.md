@@ -71,6 +71,12 @@ apps, requires confirmation before leaving AgentOS, caches a bounded accessible
 semantic snapshot, and revalidates page nodes before controlled click, scroll, or
 text-input actions. It never reads another app's private database or account token.
 
+The native Shell now shares one Compose visual system across home, media, app
+providers, confirmations, notifications, and the complete knowledge graph. Voice
+state is the home-screen focus, camera/gallery/apps/memory are immediate actions,
+and the command composer remains fixed above the keyboard instead of being buried
+at the end of a settings feed.
+
 See the [platform repository](https://github.com/kairowan/agentos-platform) for
 source, CI artifacts, and implementation issues.
 Download the current runnable APK from the

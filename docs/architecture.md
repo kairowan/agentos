@@ -45,6 +45,15 @@ activities, exposes bounded accessibility-semantic snapshots, and translates
 validated generic actions into platform accessibility operations. Stable deep
 links, share targets, content providers, and media sessions take precedence when
 an app exposes them; private app storage and credentials stay outside the bridge.
+The provider catalog covers short video, long video, reading, news, food, social,
+shopping, music, maps, and a generic fallback while preserving one common policy
+and action contract.
+
+AgentShell uses a shared native Compose design system. UI state remains in
+`StateFlow` ViewModels, while home, media, provider discovery, semantic inspection,
+confirmation, notifications, and knowledge views receive state plus event callbacks.
+The fixed command composer is independent of scroll position and respects keyboard
+and navigation-bar insets.
 
 ## Process boundary
 
