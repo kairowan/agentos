@@ -1,10 +1,24 @@
 # Roadmap
 
+The downloadable baseline is **v0.4.0, an APK pre-release**. Checked implementation
+items below describe component-level work, not a verified AOSP system image or
+production-ready hardware support. No complete AOSP 17 image has been validated.
+
 ## M0 — Build foundation
 
-- Reproducible AOSP 17 synchronization
-- AgentOS Cuttlefish product target
-- Buildable primary HOME package
+- [x] Buildable standalone primary HOME and capability-service APKs
+- [x] AgentOS Cuttlefish product definition and pinned platform source revision
+- [x] Local sync/build evidence collector and offline failure-path self-checks
+- [ ] Complete AOSP 17 checkout and successful full product image build
+- [ ] Publish resolved manifest, build log, machine shape, duration, and image checksums
+- [ ] Boot the matching image in Cuttlefish and verify system-installed AgentOS packages
+- [ ] Measure persistent storage, cache/output usage and burst compute requirements
+- [ ] Demonstrate independent contributions or external user feedback with follow-up
+- [ ] Accumulate several months of substantive maintenance before hosting reconsideration
+
+See [the build runbook](aosp-build.md) and [hosting evidence checklist](cloud-build-sponsorship.md).
+Offline self-checks do not count as a successful AOSP build; real DSP, camera HAL,
+CTS/VTS, and SELinux integration remain separate acceptance work.
 
 ## M1 — Trusted shell
 

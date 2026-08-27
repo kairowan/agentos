@@ -5,6 +5,6 @@
       name="agentos-platform"
       path="vendor/agentos"
       remote="agentos-github"
-      revision="main" />
+      upstream="refs/heads/main"
+      revision="37ae1804a9ff3914812deacc9f0728bd3bd787bb" />
 </manifest>
-

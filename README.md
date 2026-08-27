@@ -3,7 +3,7 @@
 [![Manifest](https://github.com/kairowan/agentos/actions/workflows/manifest.yml/badge.svg)](https://github.com/kairowan/agentos/actions/workflows/manifest.yml)
 [![Platform CI](https://github.com/kairowan/agentos-platform/actions/workflows/ci.yml/badge.svg)](https://github.com/kairowan/agentos-platform/actions/workflows/ci.yml)
 
-AgentOS is an experimental agent-native operating system based on AOSP 17.
+AgentOS is an experimental agent-native operating system targeting AOSP 17.
 Users express goals instead of opening traditional applications; trusted system
 services execute approved capabilities and render task-specific interfaces.
 
@@ -13,15 +13,27 @@ AgentOS 是一个基于 AOSP 17 的智能体原生操作系统实验项目。用
 
 ![AgentOS v0.4.0 using voice-first UI and the separate capability service](https://github.com/kairowan/agentos-platform/releases/download/v0.4.0/AgentShell-home.png)
 
-This repository is the project entry point. It pins the AOSP branch, documents
+**Build status:** `v0.4.0` is an Android-component APK pre-release, not a complete
+AgentOS system image. No full AOSP 17 image or Cuttlefish boot has been validated
+yet. Green component CI and Android 35 emulator screenshots do not establish that.
+
+This repository is the project entry point. It selects the AOSP branch, documents
 the architecture, and synchronizes the buildable platform code from
 [`agentos-platform`](https://github.com/kairowan/agentos-platform).
 
 ## Requirements
 
-- 64-bit Linux with KVM for Cuttlefish
-- Git and Google's `repo` tool
-- Approximately 400 GB free disk and 64 GB RAM for a full AOSP build
+- x86-64 Linux; working KVM is additionally required to boot Cuttlefish
+- Git, Python 3, Google's `repo` tool, and standard Linux utilities (`du`, `lscpu`)
+- A 64 GiB-class or larger machine; preflight allows 60 GiB visible RAM for hardware reservations
+- Provision approximately **800 GiB SSD initially**, including OS, source, output,
+  caches, and headroom. This is a planning estimate, not measured AgentOS usage.
+  The build gate conservatively requires **400 GiB still free on the output
+  filesystem after source synchronization**, not a 400 GiB total volume.
+
+Install the [upstream AOSP build prerequisites](https://source.android.com/docs/setup/start/requirements)
+before synchronizing. Use a dedicated VM/workstation for meaningful measurements;
+the collector samples whole-host resources, not container or per-job resource limits.
 
 ## Fetch the complete source tree
 
@@ -32,22 +44,33 @@ cd agentos
 ```
 
 The script initializes `android17-release` in `workspace/` and checks out the
-platform repository at `workspace/vendor/agentos`.
+platform repository at `workspace/vendor/agentos`. The local manifest pins platform
+commit `37ae1804a9ff3914812deacc9f0728bd3bd787bb`, not the moving `main` branch or
+uncommitted local edits. That source snapshot is newer than the `v0.4.0` APK tag.
+Each sync records its log, exit status, duration, and resolved manifest under
+`evidence/sync-*/`. AOSP project revisions are frozen in the exported manifest;
+the initial upstream branch selection is not itself an immutable lockfile.
 
 ## Build
 
 ```bash
+./scripts/check.sh
+./scripts/build.sh --check-only
 ./scripts/build.sh
 ```
 
-The build script rejects hosts below the documented 64 GiB RAM and 400 GiB free
-disk minimum, records a pinned source manifest and build metadata, and publishes
-SHA-256 checksums for generated images. Run `./scripts/check.sh` before syncing AOSP
-to validate linkage and the preflight behavior.
+Each attempt writes a new local `evidence/build-*/` directory with a pinned source
+manifest, machine details, full log, timestamps, resource samples, output-directory
+sizes, and (on success) image checksums. Failures retain their logs and return a
+nonzero exit code. Nothing is uploaded automatically. `scripts/check.sh` uses fake
+AOSP commands to exercise the collector; it does **not** build or boot Android.
+
+See the [first full-build runbook](docs/aosp-build.md) for external output disks,
+replaying a source snapshot, Cuttlefish boot verification, and publication checks.
 
 ## Status
 
-The v0.4 release remains the downloadable baseline. Current platform development
+The `v0.4.0` APK pre-release remains the downloadable baseline. Current platform development
 moves microphone access from the HOME app into an AOSP `VoiceInteractionService`,
 with DSP hotword detection, an isolated detection service, silence-ended command
 capture, hotword interruption, and signature-protected delivery. A bounded local

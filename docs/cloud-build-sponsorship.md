@@ -2,7 +2,7 @@
 
 ## Project
 
-AgentOS is an Apache-2.0, AOSP 17 based experiment in agent-native computing. Users
+AgentOS is an Apache-2.0 experiment targeting AOSP 17 and agent-native computing. Users
 express goals; an unprivileged planner proposes a typed operation; a trusted Broker
 applies policy and confirmation; and a bounded runtime renders task-specific UI.
 
@@ -11,30 +11,73 @@ Public repositories:
 - https://github.com/kairowan/agentos
 - https://github.com/kairowan/agentos-platform
 
-## Existing evidence
+## Current status — 2026-08-27
+
+The downloadable baseline is the
+[v0.4.0 Android-component pre-release](https://github.com/kairowan/agentos-platform/releases/tag/v0.4.0).
+It contains the Shell and Capability Service APKs, not an AOSP system image.
+Current `main` also builds a Media Service APK. System-only voice and SELinux
+integration still require a full AOSP build. There is one maintainer; independent
+community use and several months of maintenance have not yet been demonstrated.
+
+Hosting is not approved or guaranteed. The long-term objective remains donated
+build infrastructure for at least 12 months; the immediate milestone is a single
+reproducible validation build on donated or borrowed hardware. That one-time run
+does not replace the need for a sustainable development environment.
+
+## Existing component evidence
 
 - Public Kotlin and Jetpack Compose implementation
 - Typed AIDL boundary between separate Shell and Capability Service APKs
 - Signature permission, Binder caller identity checks, and draft SELinux domains
-- Repeatable Gradle unit tests and dual-APK builds on GitHub Actions
+- Repeatable Gradle unit tests and three-APK builds on current `main` in GitHub Actions
 - Real-emulator Binder integration check and checksum-published pre-release APKs
-- AOSP `repo` manifest and Cuttlefish product definition
+- Commit-pinned AgentOS local manifest and an unvalidated Cuttlefish product definition
 - Apache-2.0 license, security policy, contribution guide, roadmap, and public issues
 - Fail-closed capability, endpoint, generated-UI, and offline-fallback tests
 
-## Requested infrastructure
+## Validation evidence still needed
 
-Credits for an ephemeral Linux AOSP build worker for 12 months:
+| Evidence | Current state | Acceptance/public record |
+| --- | --- | --- |
+| Independent participation | Not yet demonstrated | Substantive merged external contributions **or** external user issues with follow-up; no star quota |
+| Sustained maintenance | Project began in August 2026 | Several months of meaningful commits, issue handling, and milestone releases; not a burst of tags |
+| Full AOSP 17 image | Not built/validated | Resolved source manifest, complete build log, machine specification, elapsed time, image checksums |
+| Matching Cuttlefish boot | Not validated | Matching fingerprint, system-installed AgentOS packages, screenshot and boot logs; a supplement to build evidence |
+| Measured resource model | Estimates only | Separate persistent storage, burst compute, cache/output footprint and retention, based on the first measured build |
 
-- 16–32 x86-64 vCPUs
-- 64–128 GB RAM
-- 600–800 GB SSD while a worker is active
+The [build runbook](aosp-build.md) describes how to collect these records. A green
+script self-check or stock Android emulator with installed APKs is not evidence
+of a full AgentOS image. Do not mark a milestone complete without a public result.
+
+## Requested infrastructure — provisional, subject to measurements
+
+For an initial measured run and, if later approved, recurring integration builds:
+
+- 16–32 x86-64 vCPUs and 64–128 GiB RAM while building
+- Approximately 800 GiB SSD provisioned initially, including the OS and headroom;
+  confirm capacity with the sponsor and adjust after measurement
 - KVM support for Cuttlefish integration tests
 - object storage for checksums, build logs, test reports, and release images
 
-The worker will not run continuously. It will start for scheduled integration builds
-and releases, publish public results, then stop. Initial target usage is up to four
-full builds per month plus incremental builds while resolving integration failures.
+Initial target usage is up to four full builds per month plus incremental builds
+while resolving integration failures. This is a burst compute workload, **not**
+zero persistent storage. Required compute hours are unknown until the first build;
+we are not requesting or promising 24/7 exclusive use of a machine.
+
+| Resource | Between builds | Proposed retention |
+| --- | --- | --- |
+| Source checkout and `.repo` objects | Persistent | Keep one active pinned checkout during approved hosting |
+| CPU/RAM worker allocation | Releasable | Release after build, verification, and evidence capture if the provider supports it |
+| `out/` and optional ccache | Disposable but useful for incremental builds | Keep one active output tree/cache initially; measure before agreeing a size cap or eviction policy |
+| Public images | Separate artifact storage; size not measured yet | Propose latest two successful milestone images, subject to sponsor capacity |
+| Logs, manifests, checksums, summaries | Persist independently of worker | Propose retention throughout the sponsorship; review sensitive content before publication |
+
+These are proposed policies, not implemented automatic deletions. Stopping a VM
+does not release its disk allocation. Deleting a checkout saves storage but forces
+a full resync and loses incremental-build savings. Do not promise both persistent
+caches and zero idle storage. No resource is provisioned, billed, or removed by the
+repository scripts.
 
 ## Public outcomes
 
@@ -52,6 +95,12 @@ standard public runner provides. No complete AgentOS system image is claimed yet
 
 ## Resource stewardship
 
-Build workers are disposable and stopped when idle. The project will use incremental
-compilation and caches only when their storage cost is lower than re-synchronization,
-publish usage against milestones, and remove resources when credits expire.
+Use a dedicated worker to make whole-host resource samples meaningful. Publish
+sync time separately from build time, distinguish a fresh output tree from an
+incremental run, and report source/output/cache sizes without double-counting nested
+directories. Revise the request with observed peaks and headroom rather than
+presenting 800 GiB as a verified sufficient capacity.
+
+When genuine participation, maintenance history, and a full-build result exist,
+follow up in the existing hosting ticket. Additional documentation or rapid tags
+alone do not satisfy those criteria, and reconsideration does not guarantee approval.
