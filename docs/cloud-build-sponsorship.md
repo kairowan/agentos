@@ -81,6 +81,20 @@ repository scripts.
 
 ## Public outcomes
 
+The next component milestone is an independently installable preview, not more
+concept modules: one versioned three-APK bundle, an actual offline
+goal → deny/confirm → system action → persisted-history recording, and small
+contribution tasks with runnable checks. The platform's
+[preview runbook](https://github.com/kairowan/agentos-platform/blob/main/docs/developer-preview.md)
+separates those checks from full-image, DSP and real-carrier evidence. Local
+artifacts or unexecuted workflows must not be reported as published validation.
+
+Prospective support can be earmarked for one measured full build, recurring build
+allocation, artifact storage, or a dedicated test device. Report the resulting
+logs, measurements and compatibility work against that contribution. The long-term
+12-month infrastructure objective remains unchanged; no donation or hosting
+approval is promised and no billing or donor account is configured by these scripts.
+
 1. First reproducible `agentos_cf_x86_64` AOSP 17 image.
 2. Published machine shape, elapsed time, commit IDs, logs, and artifact checksums.
 3. Cuttlefish boot and interaction recording.

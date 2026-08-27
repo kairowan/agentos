@@ -11,7 +11,12 @@ AgentOS 是一个基于 AOSP 17 的智能体原生操作系统实验项目。用
 系统通过受控能力执行任务，并为当前任务即时生成交互界面，而不是要求用户
 在一组传统应用之间切换。
 
-![AgentOS v0.4.0 using voice-first UI and the separate capability service](https://github.com/kairowan/agentos-platform/releases/download/v0.4.0/AgentShell-home.png)
+**设计效果图，非当前代码运行截图。** 对外 3D 展示统一使用以下两张视觉目标；
+当前渲染实现尚未达到图中效果。运行截图与录屏仅保留在本地开发资料中。
+
+| 全屏智能体 · Home concept | 3D 角色工作室 · Studio concept |
+| --- | --- |
+| ![AgentOS home design concept, not a runtime screenshot](https://raw.githubusercontent.com/kairowan/agentos-platform/main/docs/images/ui-v2/thought-field-home-concept.png) | ![AgentOS studio design concept, not a runtime screenshot](https://raw.githubusercontent.com/kairowan/agentos-platform/main/docs/images/ui-v2/thought-field-studio-concept.png) |
 
 **Build status:** `v0.4.0` is an Android-component APK pre-release, not a complete
 AgentOS system image. No full AOSP 17 image or Cuttlefish boot has been validated
